@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
-    "url": "CODSOFT-JobBoard"
+    "url": "https://github.com/Andreaay/CODSOFT-JobBoard"
   },
   "author": "Andrea Cabrera",
   "license": "ISC",
