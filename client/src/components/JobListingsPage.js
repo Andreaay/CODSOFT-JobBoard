@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useEffect, useState } from "react";
+
 
 const JobListingsPage = () => {
-  const jobListings = [
-    { id: 1, title: 'Software Engineer', company: 'Tech Co.', location: 'Toronto, Canada' },
-    { id: 2, title: 'Marketing Specialist', company: 'Marketing Inc.', location: 'Mexico City, Mexico' },
-  ];
+  const [jobListings, setJobListings] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:3001/jobs')
+      .then(response => setJobListings(response.data))
+      .catch(error => console.error('Error fetching job listings:', error));
+  }, []);
 
   return (
     <div>
