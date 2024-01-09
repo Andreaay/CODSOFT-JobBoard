@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Job = require('../models/Job');
 
-// Obtener la lista de trabajos
+
 router.get('/', async (req, res) => {
   try {
     const jobs = await Job.find();
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Obtener detalles de un trabajo por ID
+
 router.get('/:id', async (req, res) => {
   try {
     const job = await Job.findById(req.params.id);
@@ -22,6 +22,5 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Otras rutas para el panel de empleador, el panel del candidato, etc.
 
 module.exports = router;

@@ -16,7 +16,6 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// Inicio de sesión
 router.post('/login', async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -30,7 +29,6 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ message: 'Credenciales inválidas.' });
     }
 
-    // Generar y enviar un token JWT si es necesario
 
 
     res.json({ message: 'Inicio de sesión exitoso.' });

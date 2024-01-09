@@ -1,28 +1,40 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const JobApplicationForm = ({ jobId, onSubmit }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [resume, setResume] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Aquí puedes realizar la lógica de envío de la solicitud, por ejemplo, llamando a una API.
+    try {
+      const response = await axios.post('http://localhost:3001/job-applications', {
+        jobId,
+        name,
+        email,
+        resume,
+      });
 
-    // Limpia el formulario después de enviar
+      onSubmit({
+        jobId,
+        name,
+        email,
+        resume,
+      });
+
+      alert(response.data.message);
+    } catch (error) {
+      console.error('Error submitting job application:', error);
+      alert('Error submitting job application. Please try again.');
+    }
+
     setName('');
     setEmail('');
     setResume('');
-
-    // Llama a la función de retorno de llamada proporcionada por el componente padre (onSubmit)
-    onSubmit({
-      jobId,
-      name,
-      email,
-      resume,
-    });
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <label>

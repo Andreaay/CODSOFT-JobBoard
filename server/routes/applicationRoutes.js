@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Application = require('../models/Application');
 
-// Obtener aplicaciones para un trabajo específico
 router.get('/job/:jobId', async (req, res) => {
   try {
     const applications = await Application.find({ jobId: req.params.jobId });
@@ -12,7 +11,6 @@ router.get('/job/:jobId', async (req, res) => {
   }
 });
 
-// Crear una nueva aplicación
 router.post('/', async (req, res) => {
   try {
     const { jobId, candidateName, resume } = req.body;

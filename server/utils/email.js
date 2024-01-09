@@ -1,18 +1,16 @@
 const nodemailer = require('nodemailer');
 
-// Configura el transporte para enviar correos electrónicos
 const transporter = nodemailer.createTransport({
-  service: 'gmail', // Puedes usar otros servicios como 'smtp.gmail.com'
+  service: 'gmail',
   auth: {
-    user: 'tuCorreo@gmail.com', // Reemplaza con tu dirección de correo
-    pass: 'tuContraseña', // Reemplaza con tu contraseña
+    user: 'tuCorreo@gmail.com',
+    pass: 'tuContraseña',
   },
 });
 
-// Función para enviar un correo electrónico
 const sendEmail = async (to, subject, text) => {
   const mailOptions = {
-    from: 'tuCorreo@gmail.com', // Reemplaza con tu dirección de correo
+    from: 'tuCorreo@gmail.com',
     to,
     subject,
     text,
