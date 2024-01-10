@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../css/HomePage.css';
+import HeaderHome from './HeaderHome';
 
 const HomePage = () => {
   return (
     <div className="homepageContainer">
+      <HeaderHome/>
       <section className="welcome-section">
         <h1>Welcome to BubbleWork Job Board</h1>
         <p>Find job opportunities and take the next step in your career.</p>

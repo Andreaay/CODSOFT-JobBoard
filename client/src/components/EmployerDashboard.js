@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../css/EmployerDashboard.css';
+import Header from './Header';
+
 
 const EmployerDashboard = () => {
   const [jobListings, setJobListings] = useState([]);
@@ -29,10 +32,11 @@ const EmployerDashboard = () => {
   }
 
   return (
-    <div>
+    <Header/>
+    <div className="employer-dashboard-container">
       <h1>Employer Dashboard</h1>
 
-      <section>
+      <section className="job-listings-section">
         <h2>Job Listings</h2>
         <ul>
           {jobListings.map((job) => (
@@ -41,7 +45,7 @@ const EmployerDashboard = () => {
         </ul>
       </section>
 
-      <section>
+      <section className="applications-section">
         <h2>Applications</h2>
         <ul>
           {applications.map((application) => (

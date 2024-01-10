@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import JobApplicationForm from './JobApplicationForm'; 
 import axios from 'axios';
+import Header from './Header';
 
 const JobDetailPage = () => {
   const [selectedJob, setSelectedJob] = useState(null);
@@ -38,6 +39,7 @@ const JobDetailPage = () => {
 
   return (
     <div>
+      <Header/>
       <h1>{selectedJob.title}</h1>
       <p>{selectedJob.company} - {selectedJob.location}</p>
 

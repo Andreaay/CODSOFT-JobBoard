@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from "react";
 import "../css/JobListingsPage.css"
+import Header from './Header';
 
 
 const JobListingsPage = () => {
@@ -16,6 +17,7 @@ const JobListingsPage = () => {
 
   return (
     <div>
+       <Header/>
       <h1>Job Listings</h1>
 
       <section>

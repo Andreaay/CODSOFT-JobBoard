@@ -8,6 +8,8 @@ import EmployerDashboard from './components/EmployerDashboard';
 import CandidateDashboard from './components/CandidateDashboard';
 import SignUp from './components/SingUp';
 import SignIn from './components/SingUp';
+import CandidateProfileForm from './components/CandidateProfileForm';
+import Tips from './components/Tips';
 
 const apiUrl = 'http://localhost:3001';
 
@@ -29,6 +31,8 @@ const App = () => {
         <Route path="/candidate-dashboard" element={<CandidateDashboard />} />
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/signin" element={<SignIn/>} />
+        <Route path="/candidate-profile-form" element={<CandidateProfileForm/>} />
+        <Route path="/tips" element={<Tips/>} />
       </Routes>
     </Router>
   );
