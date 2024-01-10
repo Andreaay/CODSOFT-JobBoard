@@ -32,8 +32,8 @@ const EmployerDashboard = () => {
   }
 
   return (
-    <Header/>
     <div className="employer-dashboard-container">
+      <Header />
       <h1>Employer Dashboard</h1>
 
       <section className="job-listings-section">
